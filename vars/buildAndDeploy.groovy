@@ -212,7 +212,7 @@ def call(Map cfg = [:]) {
                             // 폴더 정리
                             command += "rm -rf backup ${cfg.SPECIFIC_REVISION}_version.zip && "
                             // 톰캣 재시작
-                            command += "${cfg.TEST_WEB_PATH}/../bin/shutdown.sh && "
+                            command += "${cfg.TEST_WEB_PATH}/../bin/shutdown.sh || true && "
                             command += "${cfg.TEST_WEB_PATH}/../bin/startup.sh && "
                             command += "echo \"[DEPLOY COMPLETED]\""
 
